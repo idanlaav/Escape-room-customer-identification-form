@@ -1,0 +1,48 @@
+<div class="box">
+        <h2>{{order[0].categoryName}}</h2>
+        <div>
+            שם פרטי: {{order[0].firstName}}<br />
+            שפ משפחה: {{order[0].lastName}}<br />
+        </div>
+        <div>
+            גיל השחקן הראשון: {{order[0].firstUserAge}}<br />
+            גיל השחקן השני: {{order[0].secondUserAge}}
+        </div>
+        <div *ngIf="order[0].thirdUserAge">
+            גיל השחקן השלישי: {{order[0]?.thirdUserAge}}
+        </div>
+        <div *ngIf="order[0].fourthUserAge">
+            גיל השחקן הרביעי: {{order[0]?.fourthUserAge}}
+        </div>
+        <div *ngIf="order[0].fifthUserAge">
+            גיל השחקן החמישי: {{order[0]?.fifthUserAge}}
+        </div>
+        <div *ngIf="order[0].sixthUserAge">
+            גיל השחקן השישי: {{order[0]?.sixthUserAge}}
+        </div>
+        <div *ngIf="order[0].seventhUserAge">
+            גיל השחקן השביעי: {{order[0]?.seventhUserAge}}
+        </div>
+        <div *ngIf="order[0].eighthUserAge">
+            גיל השחקן השמיני: {{order[0]?.eighthUserAge}}
+        </div>
+        <div *ngIf="order[0].ninthUserAge">
+            גיל השחקן התשיעי: {{order[0]?.ninthUserAge}}
+        </div>
+        <div *ngIf="order[0].tenthUserAge">
+            גיל השחקן העשירי: {{order[0]?.tenthUserAge}}
+        </div>
+        <div>
+            <span *ngIf="order[0].similarGame == 'true'">שיחק בחדר מקביל: כן <br /></span>
+            <span *ngIf="order[0].similarGame == 'false'">שיחק בחדר מקביל: לא <br /></span>
+            צורת תשלום: {{order[0].payment}}
+        </div>
+        <div *ngIf="order[0].sexuallyAware">
+            <span *ngIf="order[0]?.sexuallyAware == 'true'">מודע לכך שהחדר בעל אופן מיני: כן<br /></span>
+            <span *ngIf="order[0]?.sexuallyAware == 'false'">מודע לכך שהחדר בעל אופן מיני: לא<br /></span>
+        </div>
+        <div *ngIf="order[0].hangoverEilat">
+            <span *ngIf="order[0]?.hangoverEilat == 'true'">שיחק בגרסת הנגאובר אילת: כן<br /></span>
+            <span *ngIf="order[0]?.hangoverEilat == 'false'">שיחק בגרסת הנגאובר אילת: לא<br /></span>
+        </div>
+</div>

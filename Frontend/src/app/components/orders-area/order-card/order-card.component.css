@@ -1,0 +1,15 @@
+select {
+    font-size: large;
+    text-align: center;
+}  
+
+.box {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border-radius: 3%;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+

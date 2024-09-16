@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <label>שם פרטי:</label>&nbsp;
+        <input name="firstName" type="text" [ngModel]="searchFirstName" (ngModelChange)="firstNameSearch($event)">&nbsp;
+        <label>שם משפחה:</label>&nbsp;
+        <input name="lastName" type="text" [ngModel]="searchLastName" (ngModelChange)="lastNameSearch($event)">&nbsp;
+        
+        <button class="searchBtn" (click)="searchOrder()">חפש</button>
+    </div>
+    <br />
+    <app-order-card *ngIf="currentOrder && message == 0" [order]="currentOrder"></app-order-card>
+    <p *ngIf="message == 1">No orders founded</p>
+</div>

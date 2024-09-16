@@ -1,0 +1,23 @@
+img {
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.logoutBtn {
+    position: fixed;
+    top: 6%;
+    right: 1%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: brown;
+}

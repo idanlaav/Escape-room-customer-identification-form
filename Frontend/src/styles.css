@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: larger;
+    background-image: url("/assets/escape-room-lobby.jpeg");
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+    background-size: cover;
+    overflow: scroll;
+    direction: rtl;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+a {
+    color: rgb(50, 123, 148);
+    font-weight: bold;
+}

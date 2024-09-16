@@ -1,0 +1,39 @@
+form {
+    width: 40%;
+    border: 2px solid rgb(50, 169, 196);
+    padding: 2%;
+    border-radius: 2%;
+    margin: auto;
+    color: rgb(36, 119, 137);
+    font-weight: bold;
+    background-color: rgb(190, 190, 190);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+h2 {
+    text-align: center;
+}
+
+select, input, button {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-sizing: border-box; 
+    font-size: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+button {
+    color: rgb(36, 119, 137);
+}
+
+div {
+    font-size: 30%;
+    color: rgb(36, 119, 137);
+    background-color: rgb(255, 255, 255);
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 150%;
+    align-items: center;
+}

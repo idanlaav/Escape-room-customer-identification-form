@@ -1,0 +1,10 @@
+<div class="loginBox">
+    <form class="loginForm" (ngSubmit)="login()" ngNativeValidate>
+        <label>אימייל: </label><br />
+        <input type="email" name="email" pattern="^[a-z0-9._%+-.]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            title="characters@characters.(2-4)characters" [(ngModel)]="userLogin.email" required/><br /><br />
+        <label>סיסמה: </label><br />
+        <input type="password" name="password" minlength="6" maxlength="20" [(ngModel)]="userLogin.password" required/><br /><br />
+        <button>התחבר</button><br />
+    </form>
+</div>

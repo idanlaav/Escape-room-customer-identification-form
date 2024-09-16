@@ -1,0 +1,93 @@
+ <form (ngSubmit)="send()" #ordersForm="ngForm" ngNativeValidate *ngIf="thankYouStyle == 0">
+
+    <h3>שאלון התאמה למשחק</h3>
+
+    <label>שם פרטי: </label>
+    <input name="firstName" [(ngModel)]="order.firstName" required #firstNameControl="ngModel"><br />
+
+    <label>שם משפחה: </label>
+    <input name="lastName" [(ngModel)]="order.lastName" required #lastNameControl="ngModel"><br />
+
+    <label>בחר משחק: </label>
+    <select name="games" [(ngModel)]="order.categoryId" required #gameSelectControl="ngModel">
+        <option selected disabled value="Select city...">Select game...</option>
+        <option *ngFor="let game of games" [value]="game.categoryId">{{game.categoryName}}</option>
+    </select><br>
+
+    <label>כמה שחקנים תהיו?</label>
+    <input name="somePlayer" type="number" min="2" max="10" (ngModelChange)="selectPlayersNumber($event)" [ngModel]="playersNumberValue" required #playerOneControl><br />
+
+    <label>גיל השחקן הראשון:</label>
+    <input name="playerOne" type="number" min="1" max="120" [(ngModel)]="order.firstUserAge" required #playerOneControl><br />
+
+    <label>גיל השחקן השני:</label>
+    <input name="playerTwo" type="number" min="1" max="120" [(ngModel)]="order.secondUserAge" required #playerTwoControl><br />
+
+    <label *ngIf="playersNumberValue >= 3">גיל השחקן השלישי:</label>
+    <input *ngIf="playersNumberValue >= 3" name="playerThree" type="number" min="1" max="120" [(ngModel)]="order.thirdUserAge" required #playerThreeControl><br *ngIf="playersNumberValue >= 3" />
+
+    <label *ngIf="playersNumberValue >= 4">גיל השחקן הרביעי:</label>
+    <input *ngIf="playersNumberValue >= 4" name="playerFour" type="number" min="1" max="120" [(ngModel)]="order.fourthUserAge" required #playerFourControl><br *ngIf="playersNumberValue >= 4" />
+
+    <label *ngIf="playersNumberValue >= 5">גיל השחקן החמישי:</label>
+    <input *ngIf="playersNumberValue >= 5" name="playerFive" type="number" min="1" max="120" [(ngModel)]="order.fifthUserAge" required #playerFiveControl><br *ngIf="playersNumberValue >= 5" />
+
+    <label *ngIf="playersNumberValue >= 6">גיל השחקן השישי:</label>
+    <input *ngIf="playersNumberValue >= 6" name="playerSix" type="number" min="1" max="120" [(ngModel)]="order.sixthUserAge" required #playerSixControl><br *ngIf="playersNumberValue >= 6" />
+
+    <label *ngIf="playersNumberValue >= 7">גיל השחקן השביעי: </label>
+    <input *ngIf="playersNumberValue >= 7" name="playerSeven" type="number" min="1" max="120" [(ngModel)]="order.seventhUserAge" required #playerSevenControl><br *ngIf="playersNumberValue >= 7" />
+
+    <label *ngIf="playersNumberValue >= 8">גיל השחקן השמיני:</label>
+    <input *ngIf="playersNumberValue >= 8" name="playerEight" type="number" min="1" max="120" [(ngModel)]="order.eighthUserAge" required #playerEightControl><br *ngIf="playersNumberValue >= 8" />
+
+    <label *ngIf="playersNumberValue >= 9">גיל השחקן התשיעי:</label>
+    <input *ngIf="playersNumberValue >= 9" name="playerNine" type="number" min="1" max="120" [(ngModel)]="order.ninthUserAge" required #playerNineControl><br *ngIf="playersNumberValue >= 9" />
+
+    <label *ngIf="playersNumberValue >= 10">גיל השחקן העשירי:</label>
+    <input *ngIf="playersNumberValue >= 10" name="playerTen" type="number" min="1" max="120" [(ngModel)]="order.tenthUserAge" required #playerTenControl><br *ngIf="playersNumberValue >= 10" />
+
+    <label *ngIf="order.categoryId == 1">האם שיחקת בחדר בריחה ספיי קידס?</label>
+    <label *ngIf="order.categoryId == 2">האם שיחקת בחדר בריחה עורף האוייב?</label>
+    <label *ngIf="order.categoryId == 3">האם שיחקת בחדר בריחה חופשה בהפרעה?</label>
+    <label *ngIf="order.categoryId == 4">האם שיחקת בחדר בריחה הנגאובר?</label>
+    <select *ngIf="order.categoryId" name="similarGame" [(ngModel)]="order.similarGame" required #similarGameControl>
+        <option selected disabled value="Select Choice...">Select Choice...</option>
+        <option [value]="true">כן</option>
+        <option [value]="false">לא</option>
+        </select><br *ngIf="order.categoryId"/>
+
+    <label>איך ברצונך לשלם עבור המשחק?</label>
+    <select name="payment" [(ngModel)]="order.payment" required #paymentControl>
+        <option selected disabled value="Select Choice...">Select Choice...</option>
+        <option [value]="'buy me'">שובר: Buy me</option>
+        <option [value]="'בהצדעה'">שובר: בהצדעה</option>
+        <option [value]="'מזומן'">מזומן</option>
+        <option [value]="'אשראי'">אשראי</option>
+        </select><br />
+
+
+    <label *ngIf="order.categoryId == 3">חדר זה בעל אופן מיני האם אתה מסכים לכך?</label>
+    <select *ngIf="order.categoryId == 3" name="sexuallyAware" [(ngModel)]="order.sexuallyAware" required #sexuallyAwareControl>
+        <option selected disabled value="Select Choice...">Select Choice...</option>
+        <option [value]="true">כן</option>
+        <option [value]="false">לא</option>
+        </select><br *ngIf="order.categoryId == 3" />
+
+    <label *ngIf="order.categoryId == 3">האם שיחקת בחדר בריחה הנגאובר גירסת אילת?</label>
+    <select *ngIf="order.categoryId == 3" name="hangoverEilat" [(ngModel)]="order.hangoverEilat" required #hangoverEilatControl>
+        <option selected disabled value="Select Choice...">Select Choice...</option>
+        <option [value]="true">כן</option>
+        <option [value]="false">לא</option>
+        </select><br *ngIf="order.categoryId == 3" />
+
+    <button>שליחה</button>
+
+</form>
+
+<div *ngIf="message == 1">
+    <div>השאלון נשמר בהצלחה,</div>
+    <div>נשלח לאסקייפ רום פתח תקווה</div>
+    <div>מצפים לראותך בקרוב.</div>
+</div>
+

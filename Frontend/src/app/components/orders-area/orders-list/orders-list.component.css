@@ -1,0 +1,12 @@
+select {
+    text-align: center;
+}
+
+label {
+    color: tomato;
+    margin-bottom: 2%;
+}
+
+p {
+    color: red;
+}
